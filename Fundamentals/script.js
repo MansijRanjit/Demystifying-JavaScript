@@ -1,5 +1,5 @@
 /*
-//// (1) Values and Variables  ////
+///////////////////////////// (1) Values and Variables  /////////////////////////////
 
 let js = "amazing";
 if (js == "amazing") alert("JavaScript os Fun");
@@ -18,7 +18,7 @@ console.log(population);
 */
 
 /*
-//// (2) Data Types    ////
+////////////////////////////// (2) Data Types    /////////////////////////////
 
 let javascriptIsFun = true;
 console.log(javascriptIsFun);
@@ -41,7 +41,7 @@ console.log(typeof null);
 */
 
 /*
-////(3) Declaring variables ////
+////////////////////////////(3) Declaring variables ////////////////////////
 
 let age = 21;
 age = 22;
@@ -56,7 +56,8 @@ job = "Developer";
 console.log(job);
 */
 
-////(4) Basic operators ////
+/*
+////////////////////////////(4) Basic operators ///////////////////////////
 
 //Math Operators
 const now = 2023;
@@ -82,3 +83,81 @@ console.log(ageMansij > ageManvi);
 console.log(ageMansij >= 18);
 
 console.log(now - 2002 > now - 2001);
+*/
+
+/*
+///////////////////////////(4)Operators Precedence //////////////////////
+
+const now = 2023;
+const ageMansij = now - 2001;
+const ageManvi = now - 2012;
+
+console.log(now - 1999 > now - 1990); //precedence of '-' is greater than '>'
+
+const averageAge = ageMansij + ageManvi / 2; // here '/' is done first cause the precedence of division is higher than the precedence of '+'
+console.log(ageMansij, ageManvi, averageAge);
+
+//thus we use parenthesis which has the highest precedence
+const averageAge2 = (ageMansij + ageManvi) / 2;
+console.log(ageMansij, ageManvi, averageAge2);
+*/
+
+/*
+///////////////////////// Challenge //////////////////////////////
+
+// Coding Challenge #1
+// Mark and John are trying to compare their BMI (Body Mass Index), which is calculated using the formula:
+// BMI = mass / height ** 2 = mass / (height * height) (mass in kg and height in meter).
+// Your tasks:
+// 1. Store Mark's and John's mass and height in variables
+// 2. Calculate both their BMIs using the formula (you can even implement both versions)
+// 3. Create a Boolean variable 'markHigherBMI' containing information about whether Mark has a higher BMI than John.
+// Test data:
+// § Data 1: Marks weights 78 kg and is 1.69 m tall. John weights 92 kg and is 1.95m tall.
+// § Data 2: Marks weights 95 kg and is 1.88 m tall. John weights 85 kg and is 1.76m tall.
+
+let markMass = 78;
+let markHeight = 1.69;
+let johnMass = 92;
+let johnHeight = 1.95;
+
+BMIofMark = markMass / markHeight ** 2;
+BMIofJohn = johnMass / johnHeight ** 2;
+console.log(BMIofMark, BMIofJohn);
+markHigherBMI = BMIofMark > BMIofJohn;
+console.log(markHigherBMI);
+
+markMass = 95;
+markHeight = 1.88;
+johnMass = 85;
+johnHeight = 1.76;
+
+BMIofMark = markMass / (markHeight * markHeight);
+BMIofJohn = johnMass / (johnHeight * johnHeight);
+console.log(BMIofMark, BMIofJohn);
+markHigherBMI = BMIofMark > BMIofJohn;
+console.log(markHigherBMI);
+*/
+
+///////////////////////// Strings and Template Literals //////////////////////////////
+
+const firstName = "Mansij";
+const job = "Programmer";
+const birthYear = 2001;
+const now = 2023;
+const Mansij =
+  "I'm " + firstName + ", a " + (now - birthYear) + " old " + job + "!";
+console.log(Mansij);
+
+const MansijNew = `I'm ${firstName}, a ${now - birthYear} old ${job}!`;
+console.log(MansijNew);
+
+console.log(
+  "String with \n\
+multiple \n\
+lines"
+);
+
+console.log(`String with
+multiple
+lines with template literals`);
