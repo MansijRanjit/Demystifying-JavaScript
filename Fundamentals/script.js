@@ -139,7 +139,8 @@ markHigherBMI = BMIofMark > BMIofJohn;
 console.log(markHigherBMI);
 */
 
-///////////////////////// Strings and Template Literals //////////////////////////////
+/*
+///////////////////////// (5) Strings and Template Literals //////////////////////////////
 
 const firstName = "Mansij";
 const job = "Programmer";
@@ -161,3 +162,108 @@ lines"
 console.log(`String with
 multiple
 lines with template literals`);
+*/
+
+/*
+///////////////////////// (6)Decisions Taking: if_else statements  //////////////////////////////
+
+const age = 14;
+
+if (age >= 18) {
+  console.log("Driving Liscence can be applied");
+} else {
+  console.log(
+    `Driving Liscence cannot be applied wait another ${18 - age} years`
+  );
+}
+*/
+
+/*
+///////////////////////// Challenge //////////////////////////////
+
+// Coding Challenge #2
+// Use the BMI example from Challenge #1, and the code you already wrote, and improve it.
+// Your tasks:
+// 1. Print a nice output to the console, saying who has the higher BMI. The message is either "Mark's BMI is higher than John's!" or "John's BMI is higher than Mark's!"
+// 2. Use a template literal to include the BMI values in the outputs. Example: "Mark's BMI (28.3) is higher than John's (23.9)!"
+// Hint: Use an if/else statement
+
+let markMass = 78;
+let markHeight = 1.69;
+let johnMass = 92;
+let johnHeight = 1.95;
+
+BMIofMark = markMass / markHeight ** 2;
+BMIofJohn = johnMass / johnHeight ** 2;
+
+if (BMIofMark > BMIofJohn) {
+  console.log("Mark's BMI is higher than John's!");
+} else {
+  console.log("John's BMI is higher than Mark's!");
+}
+
+markMass = 95;
+markHeight = 1.88;
+johnMass = 85;
+johnHeight = 1.76;
+
+BMIofMark = markMass / (markHeight * markHeight);
+BMIofJohn = johnMass / (johnHeight * johnHeight);
+if (BMIofMark > BMIofJohn) {
+  console.log(
+    `Mark's BMI (${BMIofMark}) is higher than John's (${BMIofJohn}) !`
+  );
+} else {
+  console.log(
+    `John's BMI (${BMIofJohn}) is higher than Mark's (${BMIofMark}) !`
+  );
+}
+*/
+
+/*
+///////////////////////// (7)Type Conversion and Coercion  //////////////////////////////
+
+//type conversion
+const inputYear = "1999";
+console.log(inputYear + 18);
+console.log(Number(inputYear) + 18);
+
+console.log(Number("Mansij"));
+console.log(typeof NaN);
+
+console.log(String(29), 29);
+
+//type coercion
+console.log("I am " + 29 + " years old.");
+console.log("9" + "10" + 3);
+console.log("99" - "10" - 3);
+console.log("10" / "2");
+*/
+
+/*
+///////////////////////// (8) Truthy and Falsy values //////////////////////////////
+
+//5 falsy values: 0,'',undefined,null,NaN
+console.log(Boolean(0));
+console.log(Boolean(""));
+console.log(Boolean(undefined));
+console.log(Boolean(null));
+console.log(Boolean(NaN));
+
+const money = 100;
+if (money) {
+  console.log("Too many money");
+} else {
+  console.log("No money");
+}
+*/
+
+///////////////////////// (9) Equality operators ==vs=== //////////////////////////////
+
+const age = "18";
+if (age === 18) console.log("You're an adult!(strict equality");
+
+if (age == 18) console.log("You're an adult!(loose equality)");
+
+const favourite = prompt("Enter your favourite number?");
+console.log(favourite);
