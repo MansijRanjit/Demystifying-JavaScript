@@ -258,6 +258,7 @@ if (money) {
 }
 */
 
+/*
 ///////////////////////// (9) Equality operators ==vs=== //////////////////////////////
 
 const age = "18";
@@ -267,3 +268,18 @@ if (age == 18) console.log("You're an adult!(loose equality)");
 
 const favourite = prompt("Enter your favourite number?");
 console.log(favourite);
+console.log(typeof favourite);
+
+if (favourite == 9) {
+  console.log(" Wow 9 is an amazing number!");
+} else if (Number(favourite) === 7) {
+  //need to convert to number to compare using strict equality operator
+  console.log("7 is also good number");
+} else {
+  console.log("This a'int a cool number");
+}
+
+if (favourite !== 9) console.log("Why not 9?");
+*/
+
+///////////////////////// (10) Boolean logic //////////////////////////////
