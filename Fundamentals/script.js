@@ -282,4 +282,19 @@ if (favourite == 9) {
 if (favourite !== 9) console.log("Why not 9?");
 */
 
-///////////////////////// (10) Boolean logic //////////////////////////////
+///////////////////////// (10) Logical Operators //////////////////////////////
+
+const hasDriversLiscence = true;
+const hasGoodVision = true;
+
+console.log(hasDriversLiscence || hasGoodVision);
+console.log(hasDriversLiscence && hasGoodVision);
+
+const shouldDrive = hasDriversLiscence && hasGoodVision;
+const tired = false;
+
+if (shouldDrive && !tired) {
+  console.log("You can Drive");
+} else {
+  console.log("You cannot Drive");
+}
