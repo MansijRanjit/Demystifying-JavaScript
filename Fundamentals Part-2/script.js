@@ -224,6 +224,7 @@ const total = [bills[0] + tips[0], bills[1] + tips[1], bills[2] + tips[2]];
 console.log(bills, tips, total);
 */
 
+/*
 ////////////////////////// (7) Objects ///////////////////////////////////
 
 const intro = {
@@ -234,3 +235,190 @@ const intro = {
   friends: ["Ram", "Shyam", "Hari"],
 };
 console.log(intro);
+
+//Dot vs Bracket notation
+console.log(intro.firstName);
+console.log(intro["firstName"]); //generally bracket notation is used when we need to compute expression
+
+const nameKey = "Name";
+console.log(intro["first" + nameKey]);
+console.log(intro["last" + nameKey]);
+
+const interestedIn = prompt(
+  "What do you want to know about Mansij? Choose between firstName, lastName, age, job and friends"
+);
+//console.log(intro.interestedIn); //cannot be performed in dot operation
+//console.log(intro[interestedIn]);
+
+if (intro[interestedIn]) {
+  console.log(intro[interestedIn]);
+} else {
+  console.log(
+    "Wrong Request! Choose between firstName, lastName, age, job and friends"
+  );
+}
+
+//Add new data to object
+intro.location = "Kalanki";
+intro["instagram"] = "@mansijranjit";
+console.log(intro);
+
+//Challenge
+//Print using object:"Mansij has 3 friends, and his best friend is Ram"
+console.log(
+  `${intro.firstName} has ${intro["friends"].length} friends, and his best friend is ${intro["friends"][0]}`
+);
+*/
+
+/*
+////////////////////////// (7) Object Methods ///////////////////////////////////
+
+const intro = {
+  firstName: "Mansij",
+  lastName: "Ranjit",
+  birthYear: 2001,
+  job: "Developer",
+  friends: ["Ram", "Shyam", "Hari"],
+  hasDriverLiscence: true,
+
+  // calcAge: function (birthYear) {
+  //   return 2023 - birthYear;
+  // },
+
+  // calcAge: function () {
+  //   //console.log(this);
+  //   return 2023 - this.birthYear;
+  // },
+
+  calcAge: function () {
+    this.age = 2023 - this.birthYear;
+    return this.age;
+  },
+
+  getSummary: function () {
+    return `${this.firstName} is a ${this.calcAge()}-year old ${
+      this.job
+    }, and he has ${this.hasDriverLiscence ? "a" : "no"} driver's liscence`;
+  },
+};
+
+console.log(intro);
+console.log(intro.calcAge());
+console.log(intro.age);
+
+//Challenge
+//Print using Method: "Mansij is a 22-year old developer, and he has a/no driver's liscence"
+
+// if (intro.hasDriverLiscence) {
+//   console.log(
+//     `${intro.firstName} is a ${intro.age}-year old ${intro.job}, and he has a driver's liscence`
+//   );
+// } else {
+//   console.log(
+//     `${intro.firstName} is a ${intro.age}-year old ${intro.job}, he has no driver's liscence`
+//   );
+// }
+
+console.log(intro.getSummary());
+*/
+
+/*
+//////////////////////// Challenge /////////////////////////////////
+
+// Coding Challenge #3
+// Let's go back to Mark and John comparing their BMIs! This time, let's use objects to implement the calculations! Remember: BMI = mass / height ** 2 = mass / (height * height) (mass in kg and height in meter)
+// Your tasks:
+// 1. For each of them, create an object with properties for their full name, mass, and height (Mark Miller and John Smith)
+// 2. Create a 'calcBMI' method on each object to calculate the BMI (the same method on both objects). Store the BMI value to a property, and also return it from the method
+// 3. Log to the console who has the higher BMI, together with the full name and the respective BMI. Example: "John's BMI (28.3) is higher than Mark's (23.9)!"
+// Test data: Marks weights 78 kg and is 1.69 m tall. John weights 92 kg and is 1.95 m tall.
+
+const mark = {
+  fullName: "Mark Miller",
+  mass: 78,
+  height: 1.69,
+
+  calcBMI: function () {
+    this.BMI = this.mass / this.height ** 2;
+    return this.BMI;
+  },
+};
+
+const john = {
+  fullName: "John Smith",
+  mass: 92,
+  height: 1.95,
+
+  calcBMI: function () {
+    this.BMI = this.mass / this.height ** 2;
+    return this.BMI;
+  },
+};
+
+mark.calcBMI();
+john.calcBMI();
+
+console.log(mark.BMI, john.BMI);
+if (john.BMI > mark.BMI) {
+  console.log(
+    `${john.fullName}'s BMI (${john.BMI}) is higher than ${mark.fullName}'s (${mark.BMI})`
+  );
+} else if (mark.BMI > john.BMI) {
+  console.log(
+    `${mark.fullName}'s BMI (${mark.BMI}) is higher than ${john.fullName}'s (${john.BMI})`
+  );
+} else {
+  console.log("Equal BMI");
+}
+*/
+
+/*
+////////////////////////// (8) Iteration_ The for loop ///////////////////////////////////
+
+//for loop keeps running while the condition is True
+for (let rep = 1; rep <= 10; rep++) {
+  console.log(`Lifting weights repetition ${rep} 🏋️‍♀️`);
+}
+
+const mansij = ["Mansij", "Ranjit", 22, "Developer", ["Ram", "Shyam", "Hari"]];
+const type = [];
+
+for (let i = 0; i < mansij.length; i++) {
+  //Reading from mansij array
+  console.log(mansij[i]);
+
+  //Filling type array
+  type[i] = typeof mansij[i];
+}
+console.log(type);
+
+const birthYears = [1990, 2000, 2012, 2020];
+const age = [];
+
+for (let i = 0; i < birthYears.length; i++) {
+  age[i] = 2023 - birthYears[i];
+}
+console.log(age);
+*/
+
+////////////////////////// (9) Continue and break ///////////////////////////////////
+
+const mansij = ["Mansij", "Ranjit", 22, "Developer", ["Ram", "Shyam", "Hari"]];
+
+//continue
+console.log("----ONLY STRINGS----");
+for (let i = 0; i < mansij.length; i++) {
+  if (typeof mansij[i] !== "string") {
+    continue; //the current iteration is exited and the next iteration starts immediately
+  }
+  console.log(mansij[i], typeof mansij[i]);
+}
+
+//break
+console.log("------BREAK WITH NUMBER-------");
+for (let i = 0; i < mansij.length; i++) {
+  if (typeof mansij[i] == "number") {
+    break; //completely terminate the whole loop not only just current iteration
+  }
+  console.log(mansij[i], typeof mansij[i]);
+}
