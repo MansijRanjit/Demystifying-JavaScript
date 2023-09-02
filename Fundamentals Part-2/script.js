@@ -463,7 +463,6 @@ while (dice !== 6) {
 }
 */
 
-/*
 //////////////////////// Challenge /////////////////////////////////
 
 // Coding Challenge #4
@@ -511,4 +510,3 @@ const calcAverage = function (arr) {
 
 const total = calcAverage([5, 6, 7, 8, 9]);
 console.log(total);
-*/
