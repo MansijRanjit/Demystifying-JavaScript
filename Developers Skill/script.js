@@ -31,6 +31,7 @@ const calcTempAmplitude = function (temperature) {
 console.log(`Temperature Amplitude= ${calcTempAmplitude(temperature)}`);
 */
 
+/*
 ////////////////////////PROBLEM 2 ////////////////////////////
 //Function should receive 2 array of temperatures
 
@@ -81,4 +82,48 @@ const calcTempAmplitudes = function (temperature1, temperature2) {
 
 console.log(
   `Temperature Amplitude= ${calcTempAmplitudes(temperature1, temperature2)}`
+);
+*/
+
+/*
+//Find Bug
+const measureKelvin = function () {
+  const measurement = {
+    type: "temp",
+    unit: "celcius",
+    // C)FIX
+    //value: prompt("Degrees celcius:"),
+    value: Number(prompt("Degrees celcius:")),
+  };
+
+  // B)FIND BUG
+  console.log(measurement);
+
+  const kelvin = measurement.value + 273;
+  return kelvin;
+};
+
+// A)IDENTIFY BUG
+console.log(measureKelvin());
+*/
+
+////////////////Using Debugger in browser to find bug/////////////////
+const calcTempAmplitudes = function (temperature1, temperature2) {
+  const mergedTemp2 = temperature1.concat(temperature2);
+  console.log(mergedTemp2);
+
+  let max = 0,
+    min = 0;
+  for (let i = 0; i < mergedTemp2.length; i++) {
+    if (typeof mergedTemp2[i] !== "number") continue;
+
+    debugger; //Pause webpage at this point in debugger
+    if (mergedTemp2[i] > max) max = mergedTemp2[i]; //if max is less than 0 this gives error
+    if (mergedTemp2[i] < min) min = mergedTemp2[i]; //if min is greater than 0 this gives error
+  }
+  return max - min;
+};
+
+console.log(
+  `Temperature Amplitude= ${calcTempAmplitudes([1, 2, 3], [4, 5, 6])}`
 );
