@@ -1,8 +1,9 @@
-// Remember, we're gonna use strict mode in all scripts now!
+// Remember, to use strict mode in all scripts now!
 "use strict";
 
 /*
-///////////////////////PROBLEM 1/////////////////////////////
+/////////////////////// PROBLEM 1 /////////////////////////////
+
 //we work for a company building a smart home thermometer. Our most recent task is this :"Given an array of temperature of one day, calculate the temperature amplitude. Keep in mind that sometimes there might be a sensor error."
 
 const temperature = [3, -2, -6, -1, "error", 9, 13, 17, 15, 14, 9, 5];
@@ -32,7 +33,8 @@ console.log(`Temperature Amplitude= ${calcTempAmplitude(temperature)}`);
 */
 
 /*
-////////////////////////PROBLEM 2 ////////////////////////////
+//////////////////////// PROBLEM 2 ////////////////////////////
+
 //Function should receive 2 array of temperatures
 
 //1)Understanding the problem
@@ -86,7 +88,8 @@ console.log(
 */
 
 /*
-//Find Bug
+///////////////////// Find Bug ////////////////////////////////
+
 const measureKelvin = function () {
   const measurement = {
     type: "temp",
@@ -107,7 +110,9 @@ const measureKelvin = function () {
 console.log(measureKelvin());
 */
 
-////////////////Using Debugger in browser to find bug/////////////////
+/*
+///////////////// Using Debugger in browser to find bug /////////////////////
+
 const calcTempAmplitudes = function (temperature1, temperature2) {
   const mergedTemp2 = temperature1.concat(temperature2);
   console.log(mergedTemp2);
@@ -127,3 +132,28 @@ const calcTempAmplitudes = function (temperature1, temperature2) {
 console.log(
   `Temperature Amplitude= ${calcTempAmplitudes([1, 2, 3], [4, 5, 6])}`
 );
+*/
+
+/////////////////// Challenge ////////////////////////////////
+// Coding Challenge #1
+// Given an array of forecasted maximum temperatures, the thermometer displays a string with the given temperatures. Example: [17, 21, 23] will print "... 17ºC in 1 days ... 21ºC in 2 days ... 23ºC in 3 days ..."
+// Your tasks:
+// 1. Create a function 'printForecast' which takes in an array 'arr' and logs a string like the above to the console. Try it with both test datasets.
+// 2. Use the problem-solving framework: Understand the problem and break it up into sub-problems!
+// Test data:
+// § Data 1: [17, 21, 23]
+// § Data 2: [12, 5, -5, 0, 4]
+
+const printForecast = function (arr) {
+  let str = "";
+  for (let i = 0; i < arr.length; i++) {
+    str = str + `... ${arr[i]}⁰C in ${i + 1} days `;
+  }
+  console.log(str);
+};
+
+console.log(`----Test data 1-----`);
+printForecast([17, 21, 23]);
+
+console.log(`----Test data 2-----`);
+printForecast([12, 5, -5, 0, 4]);
