@@ -508,5 +508,5 @@ const calcAverage = function (arr) {
   return sum / arr.length;
 };
 
-const total = calcAverage([5, 6, 7, 8, 9]);
+const total = calcAverage([5, 5, 7, 8, 9]);
 console.log(total);
