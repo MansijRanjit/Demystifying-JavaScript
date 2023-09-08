@@ -10,9 +10,9 @@ const current1El = document.getElementById("current--1");
 const player0El = document.querySelector(".player--0");
 const player1El = document.querySelector(".player--1");
 
-const btnNew = document.querySelector(".btn--new");
 const btnRoll = document.querySelector(".btn--roll");
 const btnHold = document.querySelector(".btn--hold");
+const btnNew = document.querySelector(".btn--new");
 
 //Starting Condition
 score0El.textContent = 0;
@@ -21,7 +21,7 @@ score1El.textContent = 0;
 diceEl.classList.add("hidden");
 
 let currentScore = 0;
-const score = [0, 0];
+let score = [0, 0];
 let activePlayer = 0;
 let playing = true;
 
@@ -86,4 +86,27 @@ btnHold.addEventListener("click", function () {
       switchPlayer();
     }
   }
+});
+
+btnNew.addEventListener("click", function () {
+  score0El.textContent = 0;
+  score1El.textContent = 0;
+  current0El.textContent = 0;
+  current1El.textContent = 0;
+
+  //js remove method removes class if it is present and does nothing if not present
+  player0El.classList.remove("player--winner");
+  player1El.classList.remove("player--winner");
+  // console.log(activePlayer);
+  // document
+  //   .querySelector(`.player--${activePlayer}`)
+  //   .classList.remove("player--winner");
+
+  currentScore = 0;
+  score = [0, 0];
+  activePlayer = 0;
+  playing = true;
+  document
+    .querySelector(`.player--${activePlayer}`)
+    .classList.add("player--active");
 });
